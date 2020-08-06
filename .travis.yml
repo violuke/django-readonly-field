@@ -1,64 +1,123 @@
 # Config file for automatic testing at travis-ci.org
-dist: xenial
+dist: bionic
 
 language: python
 
 services:
   - postgresql
 
-env:
-  global : DATABASE_URL=postgres://postgres:@127.0.0.1:5432
-
 matrix:
     include:
       # Python version is just for the look on travis.
         - python: 2.7
-          env: TOX_ENV=py27-django111
+          env:
+            - TOX_ENV=py27-django111
+            - DATABASE_URL=postgres://postgres:@127.0.0.1:5432
 
         - python: 3.5
-          env: TOX_ENV=py35-django111
+          env:
+            - TOX_ENV=py35-django111
+            - DATABASE_URL=postgres://postgres:@127.0.0.1:5432
 
         - python: 3.6
-          env: TOX_ENV=py36-django111
+          env:
+            - TOX_ENV=py36-django111
+            - DATABASE_URL=postgres://postgres:@127.0.0.1:5432
 
         - python: 3.7
-          env: TOX_ENV=py37-django111
+          env:
+            - TOX_ENV=py37-django111
+            - DATABASE_URL=postgres://postgres:@127.0.0.1:5432
 
         - python: 3.5
-          env: TOX_ENV=py35-django20
+          env:
+            - TOX_ENV=py35-django20
+            - DATABASE_URL=postgres://postgres:@127.0.0.1:5432
 
         - python: 3.6
-          env: TOX_ENV=py36-django20
+          env:
+          - TOX_ENV=py36-django20
+          - DATABASE_URL=postgres://postgres:@127.0.0.1:5432
 
         - python: 3.7
-          env: TOX_ENV=py37-django20
+          env:
+            - TOX_ENV=py37-django20
+            - DATABASE_URL=postgres://postgres:@127.0.0.1:5432
 
         - python: 3.5
-          env: TOX_ENV=py35-django21
+          env:
+            - TOX_ENV=py35-django21
+            - DATABASE_URL=postgres://postgres:@127.0.0.1:5432
 
         - python: 3.6
-          env: TOX_ENV=py36-django21
+          env:
+            - TOX_ENV=py36-django21
+            - DATABASE_URL=postgres://postgres:@127.0.0.1:5432
 
         - python: 3.7
-          env: TOX_ENV=py37-django21
+          env:
+            - TOX_ENV=py37-django21
+            - DATABASE_URL=postgres://postgres:@127.0.0.1:5432
 
         - python: 3.5
-          env: TOX_ENV=py35-django22
+          env:
+            - TOX_ENV=py35-django22
+            - DATABASE_URL=postgres://postgres:@127.0.0.1:5432
 
         - python: 3.6
-          env: TOX_ENV=py36-django22
+          env:
+            - TOX_ENV=py36-django22
+            - DATABASE_URL=postgres://postgres:@127.0.0.1:5432
 
         - python: 3.7
-          env: TOX_ENV=py37-django22
+          env:
+            - TOX_ENV=py37-django22
+            - DATABASE_URL=postgres://postgres:@127.0.0.1:5432
+            
+         - python: 3.8
+          env:
+            - TOX_ENV=py37-django22
+            - DATABASE_URL=postgres://postgres:@127.0.0.1:5432
+            
+        - python: 3.5
+          env:
+            - TOX_ENV=py35-django30
+            - DATABASE_URL=postgres://postgres:@127.0.0.1:5432
+
+        - python: 3.6
+          env:
+            - TOX_ENV=py36-django30
+            - DATABASE_URL=postgres://postgres:@127.0.0.1:5432
+
+        - python: 3.7
+          env:
+            - TOX_ENV=py37-django30
+            - DATABASE_URL=postgres://postgres:@127.0.0.1:5432
+            
+         - python: 3.8
+          env:
+            - TOX_ENV=py37-django30
+            - DATABASE_URL=postgres://postgres:@127.0.0.1:5432
 
         - python: 3.5
-          env: TOX_ENV=py35-djangostable
+          env:
+            - TOX_ENV=py35-djangostable
+            - DATABASE_URL=postgres://postgres:@127.0.0.1:5432
 
         - python: 3.6
-          env: TOX_ENV=py36-djangostable
+          env:
+            - TOX_ENV=py36-djangostable
+            - DATABASE_URL=postgres://postgres:@127.0.0.1:5432
 
         - python: 3.7
-          env: TOX_ENV=py37-djangostable
+          env:
+            - TOX_ENV=py37-djangostable
+            - DATABASE_URL=postgres://postgres:@127.0.0.1:5432
+
+        - python: 3.8
+          env:
+            - TOX_ENV=py37-djangostable
+            - DATABASE_URL=postgres://postgres:@127.0.0.1:5432
 
         - env: TOX_ENV=linters
 
